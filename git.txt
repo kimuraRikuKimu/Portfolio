@@ -1,0 +1,130 @@
+$ git init
+Initialized empty Git repository in C:/Users/ikusei/Portfolio/.git/
+
+ikusei@HE-2020-00438 MINGW64 ~/Portfolio (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        04-kadai2_test1.jpg
+        LOVE.png
+        README.md
+        index.html
+        index2.html
+        style.css
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ikusei@HE-2020-00438 MINGW64 ~/Portfolio (master)
+$ git add style.css
+
+ikusei@HE-2020-00438 MINGW64 ~/Portfolio (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   style.css
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        04-kadai2_test1.jpg
+        LOVE.png
+        README.md
+        index.html
+        index2.html
+
+
+ikusei@HE-2020-00438 MINGW64 ~/Portfolio (master)
+$ git add index2.html
+
+ikusei@HE-2020-00438 MINGW64 ~/Portfolio (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index2.html
+        new file:   style.css
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        04-kadai2_test1.jpg
+        LOVE.png
+        README.md
+        index.html
+
+
+ikusei@HE-2020-00438 MINGW64 ~/Portfolio (master)
+$ git add --all
+
+ikusei@HE-2020-00438 MINGW64 ~/Portfolio (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   04-kadai2_test1.jpg
+        new file:   LOVE.png
+        new file:   README.md
+        new file:   index.html
+        new file:   index2.html
+        new file:   style.css
+
+
+ikusei@HE-2020-00438 MINGW64 ~/Portfolio (master)
+$ git commit -m '初めてのコミット'
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'ikusei@HE-2020-00438.(none)')
+
+ikusei@HE-2020-00438 MINGW64 ~/Portfolio (master)
+$ git log
+fatal: your current branch 'master' does not have any commits yet
+
+ikusei@HE-2020-00438 MINGW64 ~/Portfolio (master)
+$   git config --global user.email "21j5141@stu.meisei-u.ac.jp"
+
+ikusei@HE-2020-00438 MINGW64 ~/Portfolio (master)
+$  git config --global user.name "Kimura Riku"
+
+ikusei@HE-2020-00438 MINGW64 ~/Portfolio (master)
+$ git commit -m '初めてのコミット'
+[master (root-commit) 9ffc765] 初めてのコミット
+ 6 files changed, 132 insertions(+)
+ create mode 100644 04-kadai2_test1.jpg
+ create mode 100644 LOVE.png
+ create mode 100644 README.md
+ create mode 100644 index.html
+ create mode 100644 index2.html
+ create mode 100644 style.css
+
+ikusei@HE-2020-00438 MINGW64 ~/Portfolio (master)
+$ git log
+commit 9ffc765a2f663505d40d8d41f8e0cef759eb54f0 (HEAD -> master)
+Author: Kimura Riku <21j5141@stu.meisei-u.ac.jp>
+Date:   Sun Feb 11 15:50:46 2024 +0900
+
+    初めてのコミット
+
+ikusei@HE-2020-00438 MINGW64 ~/Portfolio (master)
+$

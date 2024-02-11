@@ -1,0 +1,10 @@
+.tytle{
+    color: blue;
+    /* 余白を開けてあげる！margin */
+    margin-left: 20px;
+}
+
+.R{
+    color: blueviolet;
+    padding-left: 20px;
+}
