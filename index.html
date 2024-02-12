@@ -1,111 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- cssの導入 hrefがURL -->
     <!-- <link rel="stylesheet" href="style.css"> -->
 
     <!-- JSの導入 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
 
+    <link
+      href="https://getbootstrap.jp/docs/5.3/assets/css/docs.css"
+      rel="stylesheet"
+    />
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
 
     <!-- webのバーの名前が変わる -->
     <title>Riku Kimura Portfolio</title>
-</head>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body>
+  <body class="p-3 m-0 border-0 bd-example m-0 border-0">
     <!-- ブートストラップのトップページにある！NavBarをやるための -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
 
     <!-- CSSを入れるときはclass！JSはid!(#) -->
 
-    <div class="container">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">Portfolio</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                        </li>
-                    </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">Portfolio</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html"
+                  >Home</a
+                >
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <!-- 余白を開ける為に、mt-5! -->
+      <!-- リンクに飛ぶ方法 -->
+      <p class="text-center h2 bg-secondary text-white rounded-pill p-0">
+        ABOUT
+      </p>
+
+      <p class="small">
+        <div class = "container">
+            <div class="row">
+                <div class="col-4">
+                    大学 : <br>
+                    研究室 : <br>
+                    お問い合わせ : <br>
+                    専門技術 : <br>
+                </div>
+                <div class="col-8">
+                    明星大学情報学部情報学科<br>
+                    尼岡利崇研究室 <br>
+                    21j5141@stu.meisei-u.ac.jp <br>
+                    Processing、Arduino、 P5.js、 P5.toio、 Python、 プロジェクションマッピング <br>
                 </div>
             </div>
-        </nav>
-
-
-
-        <!-- 余白を開ける為に、mt-5! -->
-        <!-- リンクに飛ぶ方法 -->
-        <p class="text-center h2 bg-secondary text-white rounded-pill p-0">ABOUT</p>
-
-        <p class="small">明星大学情報学部情報学科尼岡利崇研究室に所属。<br>
-            平成30年4月に私立八千代松陰高等学校に入学。<br>
-            令和3年3月に私立八千代松陰高等学校を卒業。<br>
-            令和3年4月に明星大学情報学部情報学科に入学。<br>
-            令和4年8月よりインタラクティブアートの作品製作を始める。
-        </p>
-        <p class="text-center h2 mt-5 bg-secondary text-white rounded-pill p-0">WORKS</p>
-
-        <div class="carousel slide" id="sample" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#sample" data-slide-to="0" class="active"></li>
-                <li data-target="#sample" data-slide-to="1"></li>
-                <li data-target="#sample" data-slide-to="2"></li>
-                <li data-target="#sample" data-slide-to="3"></li>
-                <li data-target="#sample" data-slide-to="4"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active"><a href="WebVR.html"> <img class="d-block mx-auto img-fluid w-75"
-                            src="WebVR.png" alt=""></a></div>
-                <div class="carousel-item"><a href="index2.html"> <img class="d-block mx-auto img-fluid mt-5 w-25"
-                            src="TAMABLE.jpg" alt=""></a></div>
-                <div class="carousel-item"><a href="index2.html"> <img class="d-block mx-auto img-fluid mt-5 w-25"
-                            src="PILOT.png" alt=""></a></div>
-                <div class="carousel-item"> <a href="index2.html"> <img class="d-block mx-auto img-fluid mt-5 w-75"
-                            src="The_foresrone.jpg" alt=""></a></div>
-                <div class="carousel-item"> <a href="index2.html"> <img class="d-block mx-auto img-fluid mt-5 w-25"
-                            src="ToioMap.png" alt=""></a></div>
-            </div>
-            <a href="#sample" class="carousel-control-prev" data-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-                <span class="sr-only">前の画像へ</span>
-            </a>
-            <a href="#sample" class="carousel-control-next" data-slide="next">
-                <span class="carousel-control-next-icon"></span>
-                <span class="sr-only">次の画像へ</span>
-            </a>
         </div>
+        
+       
+      </p>
+      <p class="text-center h2 mt-5 bg-secondary text-white rounded-pill p-0">
+        WORKS
+      </p>
+
+      <div
+        class="carousel slide"
+        data-bs-theme="dark"
+        id="sample"
+        data-ride="carousel"
+      >
+        <ol class="carousel-indicators">
+          <li data-target="#sample" data-slide-to="0" class="active"></li>
+          <li data-target="#sample" data-slide-to="1"></li>
+          <li data-target="#sample" data-slide-to="2"></li>
+          <li data-target="#sample" data-slide-to="3"></li>
+          <li data-target="#sample" data-slide-to="4"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <a href="WebVR.html">
+              <img
+                class="d-block mx-auto img-fluid mt-5 w-75"
+                src="WebVR.png"
+                alt=""
+            /></a>
+          </div>
+          <div class="carousel-item">
+            <a href="index2.html">
+              <img
+                class="d-block mx-auto img-fluid mt-5 w-75"
+                src="S1_2.jpg"
+                alt=""
+            /></a>
+          </div>
+          <div class="carousel-item">
+            <a href="index2.html">
+              <img
+                class="d-block mx-auto img-fluid mt-5 w-75"
+                src="S1_3.jpg"
+                alt=""
+            /></a>
+          </div>
+          <div class="carousel-item">
+            <a href="index2.html">
+              <img
+                class="d-block mx-auto img-fluid mt-5 w-75"
+                src="S1_4.jpg"
+                alt=""
+            /></a>
+          </div>
+          <div class="carousel-item">
+            <a href="index2.html">
+              <img
+                class="d-block mx-auto img-fluid mt-5 w-75"
+                src="S1_5.jpg"
+                alt=""
+            /></a>
+          </div>
+        </div>
+        <a href="#sample" class="carousel-control-prev" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="sr-only">前の画像へ</span>
+        </a>
+        <a
+          href="#sample"
+          class="carousel-control-next"
+          data-bs-theme="dark"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon"></span>
+          <span class="sr-only">次の画像へ</span>
+        </a>
+      </div>
     </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- <h1 class = "tytle">aaa</h1> -->
     <!-- .Kのように.の後に名前を入れてあげるとクラスが自動生成！ -->
@@ -115,8 +205,5 @@
 </div>
 
 <img src="LOVE.png" alt=""> -->
-
-
-</body>
-
+  </body>
 </html>
