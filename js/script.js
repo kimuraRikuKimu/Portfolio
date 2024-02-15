@@ -3,8 +3,14 @@ const balls = [];
 function setup() {
     const canvasParent = document.getElementById('canvas-parent');
     const canvasWidth = canvasParent.offsetWidth;
-    const sketchCanvas = createCanvas(canvasWidth, 450);
+    const canvasHeight = canvasParent.offsetHeight;
+    const sketchCanvas = createCanvas(canvasWidth, canvasHeight);
     sketchCanvas.parent('canvas-parent');
+    print(sketchCanvas.canvas);
+    sketchCanvas.canvas.classList.add('z-n1');
+    sketchCanvas.canvas.classList.add('position-absolute');
+    sketchCanvas.canvas.classList.add('top-0');
+    sketchCanvas.canvas.classList.add('start-0');
 
     for (let i =0; i < 50; i++) {
         const r = random(10, 30);

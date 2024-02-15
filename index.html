@@ -9,9 +9,9 @@
   <!-- <link rel="stylesheet" href="style.css"> -->
 
   <!-- JSの導入 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+  <link href="./assets/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
-  <link href="https://getbootstrap.jp/docs/5.3/assets/css/docs.css" rel="stylesheet" />
+  <!-- <link href="https://getbootstrap.jp/docs/5.3/assets/css/docs.css" rel="stylesheet" /> -->
 
   <!-- webのバーの名前が変わる -->
   <title>Riku Kimura Portfolio</title>
@@ -23,15 +23,14 @@
 
   <!-- これをやるとハンバーガーが動かなくなる遠藤さんに聞いてみる -->
   <!-- <link href="./css/style.css" rel="stylesheet"> -->
-  <script src="./assets/p5.min.js"></script>
 </head>
 
-<body class="p-3 m-0 border-0 bd-example m-0 border-0">
+<body class="m-0 border-0 bd-example m-0 border-0">
   <!-- ブートストラップのトップページにある！NavBarをやるための -->
 
   <!-- CSSを入れるときはclass！JSはid!(#) -->
 
-  <div class="container-fluid">
+  <div class="container-fluid pt-5 mt-3 p-3">
     <nav class="navbar navbar-dark bg-dark fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">Portfolio</a>
@@ -51,7 +50,7 @@
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="WebVR.html">Works</a>
+                <a class="nav-link active" aria-current="page" href="./Works/WebVR.html">Works</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
@@ -59,11 +58,14 @@
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                   aria-expanded="false">
-                  Dropdown
+                  Works
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">AFRICAFE</a></li>
+                  <li><a class="dropdown-item" href="#">TAMABLE</a></li>
+                  <li><a class="dropdown-item" href="#">TAMABLE</a></li>
+                  <li><a class="dropdown-item" href="#">TAMABLE</a></li>
+                  <li><a class="dropdown-item" href="#">TAMABLE</a></li>
                   <li>
                     <hr class="dropdown-divider">
                   </li>
@@ -83,14 +85,14 @@
 
     <!-- ↓これも遠藤さんに聞く。　p5.jsの実行画面内に文字を入れたい場合、Navberの部分を外さなければできない。（headにあるbootstrap5.3のリンクを外さなければいけない。）-->
 
-    <div id="canvas-parent" class="hero text-center">
-      <div class="overray px-4 py-5">
+    <div id="canvas-parent" class="hero position-relative pt-5">
+      <div class="px-4 py-5 text-center">
         <h1 class="display-5">Riku Kimura</h1>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
           <a href="#about-header">About</a>
         </div>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-          <a href="#projects-header">Projects</a>
+          <a href="#projects-header">Works</a>
         </div>
       </div>
     </div>
@@ -98,7 +100,7 @@
 
     <!-- 余白を開ける為に、mt-5! -->
     <!-- リンクに飛ぶ方法 -->
-    <p class="text-center h2 bg-secondary text-white mt-3 rounded-pill p-0">
+    <p id="about-header" class="text-center h2 bg-secondary text-white mt-3 rounded-pill p-0">
       ABOUT
     </p>
 
@@ -127,33 +129,33 @@
     <div id="carouselExampleCaptions" class="carousel carousel-dark slide">
 
       <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="10000">
-          <a href="WebVR.html">
-            <img src="WebVR.png" class="d-block mx-auto w-50" alt="...">
+        <div id="projects-header" class="carousel-item active" data-bs-interval="10000">
+          <a href="./Works/WebVR.html">
+            <img src="./img/WebVR.png" class="d-block mx-auto w-50" alt="...">
           </a>
         </div>
         <div class="carousel-item" data-bs-interval="2000">
           <!-- まだURL入れてない（入れたら消す) -->
-          <a href="WebVR.html">
-            <img src="S1_2.jpg" class="d-block mx-auto w-50" alt="...">
+          <a href="./Works/WebVR.html">
+            <img src="./img/S1_2.jpg" class="d-block mx-auto w-50" alt="...">
           </a>
         </div>
         <div class="carousel-item">
           <!-- まだURL入れてない（入れたら消す) -->
-          <a href="WebVR.html">
-            <img src="S1_3.jpg" class="d-block mx-auto w-50" alt="...">
+          <a href="./Works/WebVR.html">
+            <img src="./img/S1_3.jpg" class="d-block mx-auto w-50" alt="...">
           </a>
         </div>
         <div class="carousel-item">
           <!-- まだURL入れてない（入れたら消す) -->
-          <a href="WebVR.html">
-            <img src="S1_4.jpg" class="d-block mx-auto w-50" alt="...">
+          <a href="./Works/WebVR.html">
+            <img src="./img/S1_4.jpg" class="d-block mx-auto w-50" alt="...">
           </a>
         </div>
         <div class="carousel-item">
           <!-- まだURL入れてない（入れたら消す) -->
-          <a href="WebVR.html">
-            <img src="S1_5.jpg" class="d-block mx-auto w-50" alt="...">
+          <a href="./Works/WebVR.html">
+            <img src="./img/S1_5.jpg" class="d-block mx-auto w-50" alt="...">
           </a>
         </div>
       </div>
@@ -172,10 +174,10 @@
 
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  <script src="./assets/bootstrap.bundle.min.js"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
     crossorigin="anonymous"></script>
-
+  <script src="./assets/p5.min.js"></script>
   <script src="./js/script.js"></script>
 </body>
 
