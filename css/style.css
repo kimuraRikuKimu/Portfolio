@@ -1,0 +1,34 @@
+.hero {
+    height: 450px;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 50px;
+}
+
+.hero h1 {
+    color: white;
+    text-transform: uppercase;
+}
+
+.hero div {
+    color: white;
+    text-transform: uppercase;
+}
+
+.hero .header-list {
+    list-style: none;
+}
+
+.header {
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.overray {
+    height: 450px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}

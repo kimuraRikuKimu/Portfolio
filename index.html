@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- cssの導入 hrefがURL -->
   <!-- <link rel="stylesheet" href="style.css"> -->
@@ -14,9 +15,15 @@
 
   <!-- webのバーの名前が変わる -->
   <title>Riku Kimura Portfolio</title>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  <!-- ↓これやるとハンバーガー動かなくなった！遠藤さんに聞いてみる -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script> -->
+  <!-- p5.js -->
+
+  <!-- これをやるとハンバーガーが動かなくなる遠藤さんに聞いてみる -->
+  <!-- <link href="./css/style.css" rel="stylesheet"> -->
+  <script src="./assets/p5.min.js"></script>
 </head>
 
 <body class="p-3 m-0 border-0 bd-example m-0 border-0">
@@ -72,6 +79,22 @@
         </div>
       </div>
     </nav>
+
+
+    <!-- ↓これも遠藤さんに聞く。　p5.jsの実行画面内に文字を入れたい場合、Navberの部分を外さなければできない。（headにあるbootstrap5.3のリンクを外さなければいけない。）-->
+
+    <div id="canvas-parent" class="hero text-center">
+      <div class="overray px-4 py-5">
+        <h1 class="display-5">Riku Kimura</h1>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <a href="#about-header">About</a>
+        </div>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <a href="#projects-header">Projects</a>
+        </div>
+      </div>
+    </div>
+
 
     <!-- 余白を開ける為に、mt-5! -->
     <!-- リンクに飛ぶ方法 -->
@@ -153,7 +176,7 @@
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
     crossorigin="anonymous"></script>
 
-
+  <script src="./js/script.js"></script>
 </body>
 
 </html>

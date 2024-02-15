@@ -45,3 +45,13 @@
   font: 350 27px/0.9em 'futura-pt', 'noto sans japanese', sans-serif;
   margin: 0 0 20px;
 }
+
+
+.overray {
+  height: 450px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
