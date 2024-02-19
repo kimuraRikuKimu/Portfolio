@@ -175,9 +175,9 @@ function setup() {
 
     for (let i = 0; i < circlePositions.length; i++) {
         information.push(true);
-        speedsX.push(random(-10, 0));
-        speedsY.push(random(-20, 0));
-        frictionsX.push(0.1);
+        speedsX.push(random(-10, 10));
+        speedsY.push(random(-30, 0));
+        frictionsX.push(0.5);
         gravitysY.push(0.1);
         targetX.push(circlePositions[i][0]);
         targetY.push(circlePositions[i][1]);
@@ -193,7 +193,7 @@ function draw() {
     background(200);
 
     for (let i = 0; i < circlePositions.length; i++) {
-        if (information[i] && infomartionCount == 0) {
+        if (information[0] && information[circlePositions.length-1] && infomartionCount == 0) {
             text("Click here", canvasWidth / 2 - 30, canvasHeight / 2);
             infomartionCount++;
         }
@@ -209,7 +209,7 @@ function draw() {
                 speedsY[i] += gravitysY[i];
 
                 if (position[1] - 100 > canvasHeight) {
-                    speedsY[i] *= -0.90;
+                    speedsY[i] *= -0.7;
                     position[1] = canvasHeight + 100;
                     if (abs(speedsX[i]) < frictionsX[i]) {
                         speedsX[i] = 0;
@@ -231,7 +231,7 @@ function draw() {
                 }
 
                 fallCount[i]++;
-                if (fallCount[i] == 500) {
+                if (fallCount[i] == 250) {
                     fall[i] = false;
                     fallCountBoolean[i] = true;
                     targetBoolean[i] = true;
@@ -250,7 +250,7 @@ function draw() {
                 // console.log(i, position[0], position[1], targetCount[i], "");
                 targetCount[i] = 0;
                 speedsX[i] = (random(-10, 10));
-                speedsY[i] = (random(-10, 10));
+                speedsY[i] = (random(-30, 10));
                 // ellipse(10, 10, 20, 20);
                 targetBoolean[i] = false;
                 information[i] = true;
