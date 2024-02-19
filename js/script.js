@@ -1,4 +1,5 @@
 let circlePositions = [];
+let position;
 let c1X, c1Y, c2X, c2Y, c3X, c3Y, c4X, c4Y, c5X, c5Y, c6X, c6Y, c7X, c7Y, c8X, c8Y, c9X, c9Y, c10X, c10Y, c11X, c11Y, c12X, c12Y, c13X, c13Y, c14X, c14Y, c15X, c15Y, c16X, c16Y, c17X, c17Y, c18X, c18Y, c19X, c19Y, c20X, c20Y, c21X, c21Y, c22X, c22Y, c23X, c23Y, c24X, c24Y, c25X, c25Y, c26X, c26Y, c27X, c27Y, c28X, c28Y, c29X, c29Y, c30X, c30Y;
 //↑位置　＝前の位置＋速さ
 
@@ -125,6 +126,7 @@ let c110X = 816; let c110Y = 164;
 let c111X = 823; let c111Y = 168;
 let c112X = 830; let c112Y = 165;
 
+
 circlePositions = [
     [c1X, c1Y], [c2X, c2Y], [c3X, c3Y], [c4X, c4Y], [c5X, c5Y], [c6X, c6Y], [c7X, c7Y], [c8X, c8Y], [c9X, c9Y], [c10X, c10Y],
     [c11X, c11Y], [c12X, c12Y], [c13X, c13Y], [c14X, c14Y], [c15X, c15Y], [c16X, c16Y], [c17X, c17Y], [c18X, c18Y], [c19X, c19Y], [c20X, c20Y],
@@ -140,16 +142,15 @@ circlePositions = [
     [c111X, c111Y], [c112X, c112Y]
 ];
 
-// let Pspeed = 0; //前の速さ
-// let speed = 1; //速さ = 前の速さ + 重力
-// let gravity = 0.1; //重力
-let fall = false;
+let targetBoolean = [];
+let fall = [], fallCount = [], fallCountBoolean = [];
 let speeds = []; //[番号][値]
 let gravitys = [];
-for (let i = 0; i < circlePositions.length; i++) {
-    speeds.push(1)
-    gravitys.push(0.1);
-}
+
+let targetX = []; // 到達したいx座標
+let targetY = []; // 到達したいy座標
+let targetCount = [];
+
 
 
 
@@ -165,34 +166,102 @@ function setup() {
     sketchCanvas.canvas.classList.add('top-0');
     sketchCanvas.canvas.classList.add('start-0');
 
+
+    for (let i = 0; i < circlePositions.length; i++) {
+        speeds.push(1);
+        gravitys.push(0.1);
+        targetX.push(circlePositions[i][0]);
+		targetY.push(circlePositions[i][1]);
+		targetCount.push(0);
+		targetBoolean.push(false);
+		fall.push(false);
+		fallCount.push(0);
+		fallCountBoolean.push(true);
+    }
 }
 
 function draw() {
-    background(200);
-
-
-    for (let i = 0; i < circlePositions.length; i++) {
-        let position = circlePositions[i];
-
-        noStroke();
-        let k = abs(c54X - width / 2);
+	background(200);
+	
+	for (let i = 0; i < circlePositions.length; i++) {
+		position = circlePositions[i];
+		noStroke();
+		let k = abs(c54X - width / 2);
         circle(position[0] - k, position[1] - 100, 10);
+	
+		if(targetBoolean[i] == false){
+			if(fall[i] && fallCount[i] < 500){
+	 			position[1] += speeds[i];
+	 			speeds[i] += gravitys[i];
+	
+	 			if(position[1] > height){
+			 		speeds[i] *= -0.90;
+		 			position[1] = height;
+	 			}
+		
+				fallCount[i] ++;
+				if(fallCount[i] == 500){
+					fall[i] = false;
+					fallCountBoolean[i] = true;
+					targetBoolean[i] = true;
+				}
+		}
+	}else{
+		if (abs(targetX[i] - position[0]) > 0.5 || abs(targetY[i] - position[1]) > 0.5 ){
+			if(targetCount[i] > 100){
+    		// 目標座標に向かって移動する
+    		position[0] += (targetX[i] - position[0]) * 0.05; // 0.05はボールの移動速度を調整するための値
+    		position[1] += (targetY[i] - position[1]) * 0.05; // 0.05はボールの移動速度を調整するための値
+			}else{
+				targetCount[i] ++;
+			}
+ 	 }else{
+			console.log(i, position[0], position[1], targetCount[i], "");
+			targetCount[i] = 0;
+			// ellipse(10, 10, 20, 20);
+			targetBoolean[i] = false;
+	}
+}
+}
+}
 
-        if (fall == true) {
-            position[1] += speeds[i];
-            speeds[i] += gravitys[i];
-            if (position[1] > height) {
-                speeds[i] *= -0.9;
-                position[1] = height;
-            }
-        }
-    }
-
-
-
+function mouseClicked(){
+	for (let i = 0; i < circlePositions.length; i++) {
+		if(fallCountBoolean[i]){
+			fall[i] = true;
+			fallCount[i] = 0;
+			fallCountBoolean[i] = false;
+		}
+	}
 }
 
 
-function mouseClicked() {
-    fall = true;
-}
+// function draw() {
+//     background(200);
+
+
+//     for (let i = 0; i < circlePositions.length; i++) {
+//         let position = circlePositions[i];
+
+//         noStroke();
+//         let k = abs(c54X - width / 2);
+//         circle(position[0] - k, position[1] - 100, 10);
+
+//         if (fall == true) {
+//             position[1] += speeds[i];
+//             speeds[i] += gravitys[i];
+//             if (position[1] > height) {
+//                 speeds[i] *= -0.9;
+//                 position[1] = height;
+//             }
+//         }
+//     }
+
+
+
+// }
+
+
+// function mouseClicked() {
+//     fall = true;
+// }
