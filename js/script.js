@@ -157,6 +157,9 @@ let targetCount = [];
 let information = [];
 let infomartionCount = 0;
 
+let circleColor = [255, 255, 255];
+let circleColorBoolean = true;
+
 let canvasWidth;
 let canvasHeight
 
@@ -193,18 +196,27 @@ function draw() {
     background(200);
 
     for (let i = 0; i < circlePositions.length; i++) {
-        if (information[0] && information[circlePositions.length-1] && infomartionCount == 0) {
-            text("Click here", canvasWidth / 2 - 30, canvasHeight / 2);
+        if (information[0] && information[circlePositions.length - 1] && infomartionCount == 0) {
+            fill(0, 0, 0);
+            textAlign(CENTER);
+            text("Click here to change colors", canvasWidth / 2, canvasHeight / 2);
             infomartionCount++;
         }
         position = circlePositions[i];
         noStroke();
+        fill(circleColor[0], circleColor[1], circleColor[2]);
         let k = abs(c54X - canvasWidth / 2);
         circle(position[0] - k, position[1] - 100, 10);
 
         if (targetBoolean[i] == false) {
-            if (fall[i] && fallCount[i] < 500) {
+            if (fall[i] && fallCount[i] < 250) {
                 position[0] += speedsX[i];
+                if (circleColorBoolean) {
+                    for (let index = 0; index < circleColor.length; index++) {
+                        circleColor[index] = random(0, 255);
+                    }
+                    circleColorBoolean = false;
+                }
                 position[1] += speedsY[i];
                 speedsY[i] += gravitysY[i];
 
@@ -253,6 +265,9 @@ function draw() {
                 speedsY[i] = (random(-30, 10));
                 // ellipse(10, 10, 20, 20);
                 targetBoolean[i] = false;
+                if (i == 1) {
+                    circleColorBoolean = true;
+                }
                 // information[i] = true;
             }
         }
