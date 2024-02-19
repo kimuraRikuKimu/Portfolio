@@ -253,7 +253,7 @@ function draw() {
                 speedsY[i] = (random(-30, 10));
                 // ellipse(10, 10, 20, 20);
                 targetBoolean[i] = false;
-                information[i] = true;
+                // information[i] = true;
             }
         }
     }
