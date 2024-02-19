@@ -144,20 +144,23 @@ circlePositions = [
 
 let targetBoolean = [];
 let fall = [], fallCount = [], fallCountBoolean = [];
-let speeds = []; //[番号][値]
-let gravitys = [];
+let speedsX = []; //[番号][値]
+let speedsY = []; //[番号][値]
+let frictionsX = [];
+let gravitysY = [];
+
 
 let targetX = []; // 到達したいx座標
 let targetY = []; // 到達したいy座標
 let targetCount = [];
 
-
-
+let canvasWidth;
+let canvasHeight
 
 function setup() {
     const canvasParent = document.getElementById('canvas-parent');
-    const canvasWidth = canvasParent.offsetWidth;
-    const canvasHeight = canvasParent.offsetHeight;
+    canvasWidth = canvasParent.offsetWidth;
+    canvasHeight = canvasParent.offsetHeight;
     const sketchCanvas = createCanvas(canvasWidth, canvasHeight);
     sketchCanvas.parent('canvas-parent');
     print(sketchCanvas.canvas);
@@ -168,100 +171,92 @@ function setup() {
 
 
     for (let i = 0; i < circlePositions.length; i++) {
-        speeds.push(1);
-        gravitys.push(0.1);
+        speedsX.push(random(-10, 0));
+        speedsY.push(random(-20, 0));
+        frictionsX.push(0.1);
+        gravitysY.push(0.1);
         targetX.push(circlePositions[i][0]);
-		targetY.push(circlePositions[i][1]);
-		targetCount.push(0);
-		targetBoolean.push(false);
-		fall.push(false);
-		fallCount.push(0);
-		fallCountBoolean.push(true);
+        targetY.push(circlePositions[i][1]);
+        targetCount.push(0);
+        targetBoolean.push(false);
+        fall.push(false);
+        fallCount.push(0);
+        fallCountBoolean.push(true);
     }
 }
 
 function draw() {
-	background(200);
-	
-	for (let i = 0; i < circlePositions.length; i++) {
-		position = circlePositions[i];
-		noStroke();
-		let k = abs(c54X - width / 2);
+    background(200);
+
+    for (let i = 0; i < circlePositions.length; i++) {
+        position = circlePositions[i];
+        noStroke();
+        let k = abs(c54X - canvasWidth / 2);
         circle(position[0] - k, position[1] - 100, 10);
-	
-		if(targetBoolean[i] == false){
-			if(fall[i] && fallCount[i] < 500){
-	 			position[1] += speeds[i];
-	 			speeds[i] += gravitys[i];
-	
-	 			if(position[1] > height){
-			 		speeds[i] *= -0.90;
-		 			position[1] = height;
-	 			}
-		
-				fallCount[i] ++;
-				if(fallCount[i] == 500){
-					fall[i] = false;
-					fallCountBoolean[i] = true;
-					targetBoolean[i] = true;
-				}
-		}
-	}else{
-		if (abs(targetX[i] - position[0]) > 0.5 || abs(targetY[i] - position[1]) > 0.5 ){
-			if(targetCount[i] > 100){
-    		// 目標座標に向かって移動する
-    		position[0] += (targetX[i] - position[0]) * 0.05; // 0.05はボールの移動速度を調整するための値
-    		position[1] += (targetY[i] - position[1]) * 0.05; // 0.05はボールの移動速度を調整するための値
-			}else{
-				targetCount[i] ++;
-			}
- 	 }else{
-			console.log(i, position[0], position[1], targetCount[i], "");
-			targetCount[i] = 0;
-			// ellipse(10, 10, 20, 20);
-			targetBoolean[i] = false;
-	}
+
+        if (targetBoolean[i] == false) {
+            if (fall[i] && fallCount[i] < 500) {
+                position[0] += speedsX[i];
+                position[1] += speedsY[i];
+                speedsY[i] += gravitysY[i];
+
+                if (position[1] > canvasHeight) {
+                    speedsY[i] *= -0.90;
+                    position[1] = canvasHeight;
+                    if (abs(speedsX[i]) < frictionsX[i]) {
+                        speedsX[i] = 0;
+                    } else if (speedsX[i] < 0) {
+                        speedsX[i] += frictionsX[i];
+                    } else {
+                        speedsX[i] -= frictionsX[i];
+                    }
+                } else if (position[1] < 0) {
+                    speedsY[i] *= -1;
+                    position[1] = 0;
+                }
+                if (position[0] > canvasWidth) {
+                    speedsX[i] *= -1;
+                    position[0] = canvasWidth;
+                } else if (position[0] < 0) {
+                    speedsX[i] *= -1;
+                    position[0] = 0;
+                }
+
+                fallCount[i]++;
+                if (fallCount[i] == 500) {
+                    fall[i] = false;
+                    fallCountBoolean[i] = true;
+                    targetBoolean[i] = true;
+                }
+            }
+        } else {
+            if (abs(targetX[i] - position[0]) > 0.5 || abs(targetY[i] - position[1]) > 0.5) {
+                if (targetCount[i] > 100) {
+                    // 目標座標に向かって移動する
+                    position[0] += (targetX[i] - position[0]) * 0.05; // 0.05はボールの移動速度を調整するための値
+                    position[1] += (targetY[i] - position[1]) * 0.05; // 0.05はボールの移動速度を調整するための値
+                } else {
+                    targetCount[i]++;
+                }
+            } else {
+                // console.log(i, position[0], position[1], targetCount[i], "");
+                targetCount[i] = 0;
+                speedsX[i] = (random(-10, 10));
+                speedsY[i] = (random(-10, 10));
+                // ellipse(10, 10, 20, 20);
+                targetBoolean[i] = false;
+            }
+        }
+    }
 }
-}
-}
 
-function mouseClicked(){
-	for (let i = 0; i < circlePositions.length; i++) {
-		if(fallCountBoolean[i]){
-			fall[i] = true;
-			fallCount[i] = 0;
-			fallCountBoolean[i] = false;
-		}
-	}
+function mouseClicked() {
+    for (let i = 0; i < circlePositions.length; i++) {
+        if (fallCountBoolean[i]) {
+            fall[i] = true;
+            fallCount[i] = 0;
+            fallCountBoolean[i] = false;
+        }
+    }
 }
 
-
-// function draw() {
-//     background(200);
-
-
-//     for (let i = 0; i < circlePositions.length; i++) {
-//         let position = circlePositions[i];
-
-//         noStroke();
-//         let k = abs(c54X - width / 2);
-//         circle(position[0] - k, position[1] - 100, 10);
-
-//         if (fall == true) {
-//             position[1] += speeds[i];
-//             speeds[i] += gravitys[i];
-//             if (position[1] > height) {
-//                 speeds[i] *= -0.9;
-//                 position[1] = height;
-//             }
-//         }
-//     }
-
-
-
-// }
-
-
-// function mouseClicked() {
-//     fall = true;
-// }
