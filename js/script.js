@@ -153,6 +153,10 @@ let gravitysY = [];
 let targetX = []; // 到達したいx座標
 let targetY = []; // 到達したいy座標
 let targetCount = [];
+let randomMode;
+
+let target2 = []; //ついてくるようにする
+let Ptarget2;
 
 let information = [];
 let infomartionCount = 0;
@@ -160,7 +164,6 @@ let infomartionCount = 0;
 let circleColor = [255, 255, 255];
 let circleColorTerget = [255, 255, 255];
 let circleColorBoolean = true;
-let PcircleColor = [255, 255, 255];
 
 let canvasWidth;
 let canvasHeight
@@ -186,17 +189,22 @@ function setup() {
         gravitysY.push(0.1);
         targetX.push(circlePositions[i][0]);
         targetY.push(circlePositions[i][1]);
+        Ptarget2 = int(random(circlePositions.length - 1))
+        target2.push(circlePositions[Ptarget2][0]);
+        target2.push(circlePositions[Ptarget2][1]);
+        targetCount.push(0);
         targetCount.push(0);
         targetBoolean.push(false);
         fall.push(false);
         fallCount.push(0);
         fallCountBoolean.push(true);
     }
+    randomMode = int(random(1.5, 2.5));
 }
 
 function draw() {
     background(200);
-    console.log(circleColor[0]);
+    // console.log(circleColor[0]);
     if (information[0] && infomartionCount == 0) {
         fill(0, 0, 0);
         textAlign(CENTER);
@@ -269,24 +277,56 @@ function draw() {
                     position[0] += (targetX[i] - position[0]) * 0.05; // 0.05はボールの移動速度を調整するための値
                     position[1] += (targetY[i] - position[1]) * 0.05; // 0.05はボールの移動速度を調整するための値
                 } else {
-                    targetCount[i]++;
+                    if (randomMode == 0) {
+
+                        position[0] += speedsX[i];
+                        position[1] += speedsY[i];
+                        targetCount[i]++;
+                    } else if (randomMode == 1) {
+                        /*案2 */
+                        position[0] += speedsX[i];
+                        position[1] += speedsY[i];
+                        if (speedsX[i] < 0) {
+                            speedsX[i] += abs(speedsX[i]) / 30;
+                        } else {
+                            speedsX[i] -= abs(speedsX[i]) / 30;
+                        }
+                        if (speedsY[i] < 0) {
+                            speedsY[i] += abs(speedsY[i]) / 30;
+                        } else {
+                            speedsY[i] -= abs(speedsY[i]) / 30;
+                        }
+
+                        targetCount[i]++;
+                    } else if (randomMode == 2) {
+                        position[0] += (target2[0] - position[0]) * 0.05; // 0.05はボールの移動速度を調整するための値
+                        position[1] += (target2[1] - position[1]) * 0.05; // 0.05はボールの移動速度を調整するための値
+                        targetCount[i]++;
+                    }else if (randomMode == 3) {
+                        position[0] += (target2[0] - position[0]) * 0.05; // 0.05はボールの移動速度を調整するための値
+                        position[1] += (target2[1] - position[1]) * 0.05; // 0.05はボールの移動速度を調整するための値
+                        //円のやつインタラ2
+                        targetCount[i]++;
+                    }
                 }
             } else {
                 // console.log(i, position[0], position[1], targetCount[i], "");
                 targetCount[i] = 0;
                 speedsX[i] = (random(-10, 10));
                 speedsY[i] = (random(-30, 10));
-                // ellipse(10, 10, 20, 20);
                 targetBoolean[i] = false;
                 if (i == 1) {
                     circleColorBoolean = true;
+                    randomMode = int(random(4));
                 }
+              
                 // information[i] = true;
+                console.log(randomMode);
             }
         }
     }
     infomartionCount = 0;
-
+    //   console.log(randomMode);
 }
 
 function mouseClicked() {
