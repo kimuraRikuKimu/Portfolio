@@ -158,7 +158,9 @@ let information = [];
 let infomartionCount = 0;
 
 let circleColor = [255, 255, 255];
+let circleColorTerget = [255, 255, 255];
 let circleColorBoolean = true;
+let PcircleColor = [255, 255, 255];
 
 let canvasWidth;
 let canvasHeight
@@ -194,16 +196,27 @@ function setup() {
 
 function draw() {
     background(200);
+    console.log(circleColor[0]);
+    if (information[0] && infomartionCount == 0) {
+        fill(0, 0, 0);
+        textAlign(CENTER);
+        text("Click here to change colors", canvasWidth / 2, canvasHeight / 2);
+        infomartionCount++;
+    }
+    for (let i = 0; i < circleColorTerget.length; i++) {
+        if (circleColorTerget[i] - circleColor[i] < 0) {
+            circleColor[i] -= abs(circleColorTerget[i] - circleColor[i]) / 250;
+        } else if (circleColorTerget[i] - circleColor[i] > 0) {
+            circleColor[i] += abs(circleColorTerget[i] - circleColor[i]) / 250;
+        } else {
 
-    for (let i = 0; i < circlePositions.length; i++) {
-        if (information[0] && information[circlePositions.length - 1] && infomartionCount == 0) {
-            fill(0, 0, 0);
-            textAlign(CENTER);
-            text("Click here to change colors", canvasWidth / 2, canvasHeight / 2);
-            infomartionCount++;
         }
+
+    }
+    for (let i = 0; i < circlePositions.length; i++) {
         position = circlePositions[i];
         noStroke();
+        //250までに目標の色を段々変えていく
         fill(circleColor[0], circleColor[1], circleColor[2]);
         let k = abs(c54X - canvasWidth / 2);
         circle(position[0] - k, position[1] - 100, 10);
@@ -212,8 +225,8 @@ function draw() {
             if (fall[i] && fallCount[i] < 250) {
                 position[0] += speedsX[i];
                 if (circleColorBoolean) {
-                    for (let index = 0; index < circleColor.length; index++) {
-                        circleColor[index] = random(0, 255);
+                    for (let i = 0; i < circleColorTerget.length; i++) {
+                        circleColorTerget[i] = random(0, 255);
                     }
                     circleColorBoolean = false;
                 }
