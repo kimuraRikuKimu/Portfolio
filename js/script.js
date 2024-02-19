@@ -154,6 +154,9 @@ let targetX = []; // 到達したいx座標
 let targetY = []; // 到達したいy座標
 let targetCount = [];
 
+let information = [];
+let infomartionCount = 0;
+
 let canvasWidth;
 let canvasHeight
 
@@ -171,6 +174,7 @@ function setup() {
 
 
     for (let i = 0; i < circlePositions.length; i++) {
+        information.push(true);
         speedsX.push(random(-10, 0));
         speedsY.push(random(-20, 0));
         frictionsX.push(0.1);
@@ -189,6 +193,10 @@ function draw() {
     background(200);
 
     for (let i = 0; i < circlePositions.length; i++) {
+        if (information[i] && infomartionCount == 0) {
+            text("Click here", canvasWidth / 2 - 30, canvasHeight / 2);
+            infomartionCount++;
+        }
         position = circlePositions[i];
         noStroke();
         let k = abs(c54X - canvasWidth / 2);
@@ -200,9 +208,9 @@ function draw() {
                 position[1] += speedsY[i];
                 speedsY[i] += gravitysY[i];
 
-                if (position[1] > canvasHeight) {
+                if (position[1] - 100 > canvasHeight) {
                     speedsY[i] *= -0.90;
-                    position[1] = canvasHeight;
+                    position[1] = canvasHeight + 100;
                     if (abs(speedsX[i]) < frictionsX[i]) {
                         speedsX[i] = 0;
                     } else if (speedsX[i] < 0) {
@@ -210,16 +218,16 @@ function draw() {
                     } else {
                         speedsX[i] -= frictionsX[i];
                     }
-                } else if (position[1] < 0) {
+                } else if (position[1] - 100 < 0) {
                     speedsY[i] *= -1;
-                    position[1] = 0;
+                    position[1] = 100;
                 }
-                if (position[0] > canvasWidth) {
+                if (position[0] - k > canvasWidth) {
                     speedsX[i] *= -1;
-                    position[0] = canvasWidth;
-                } else if (position[0] < 0) {
+                    position[0] = canvasWidth + k;
+                } else if (position[0] - k < 0) {
                     speedsX[i] *= -1;
-                    position[0] = 0;
+                    position[0] = k;
                 }
 
                 fallCount[i]++;
@@ -245,17 +253,23 @@ function draw() {
                 speedsY[i] = (random(-10, 10));
                 // ellipse(10, 10, 20, 20);
                 targetBoolean[i] = false;
+                information[i] = true;
             }
         }
     }
+    infomartionCount = 0;
+
 }
 
 function mouseClicked() {
     for (let i = 0; i < circlePositions.length; i++) {
-        if (fallCountBoolean[i]) {
-            fall[i] = true;
-            fallCount[i] = 0;
-            fallCountBoolean[i] = false;
+        if (0 < mouseX && mouseX < width && 0 < mouseY && mouseY < height) {
+            information[i] = false;
+            if (fallCountBoolean[i]) {
+                fall[i] = true;
+                fallCount[i] = 0;
+                fallCountBoolean[i] = false;
+            }
         }
     }
 }
