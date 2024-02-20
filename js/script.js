@@ -158,6 +158,10 @@ let randomMode;
 let target2 = []; //ついてくるようにする
 let Ptarget2;
 
+let target3;
+let target3Circle = [];
+let target3CircleBoolean = true;
+
 let information = [];
 let infomartionCount = 0;
 
@@ -189,9 +193,10 @@ function setup() {
         gravitysY.push(0.1);
         targetX.push(circlePositions[i][0]);
         targetY.push(circlePositions[i][1]);
-        Ptarget2 = int(random(circlePositions.length - 1))
-        target2.push(circlePositions[Ptarget2][0]);
-        target2.push(circlePositions[Ptarget2][1]);
+        // Ptarget2.push(circlePositions[55]);
+        // Ptarget2 = int(random(circlePositions.length - 1))
+        target2.push(circlePositions[55][0]);
+        target2.push(circlePositions[55][1]);
         targetCount.push(0);
         targetCount.push(0);
         targetBoolean.push(false);
@@ -199,16 +204,26 @@ function setup() {
         fallCount.push(0);
         fallCountBoolean.push(true);
     }
-    randomMode = int(random(1.5, 2.5));
+    randomMode = int(random(3));
 }
 
 function draw() {
-    background(200);
+    background(255);
     // console.log(circleColor[0]);
     if (information[0] && infomartionCount == 0) {
+        stroke(0);
+        if (width / 2 - 45 < mouseX && mouseX < width / 2 + 45 && height / 2 - 15 < mouseY && mouseY < height / 2 + 15) {
+            fill(255, 0, 0, 200);
+        } else {
+            noFill();
+        }
+        rect(width / 2 - 45, height / 2 - 15, 90, 20);
         fill(0, 0, 0);
         textAlign(CENTER);
-        text("Click here to change colors", canvasWidth / 2, canvasHeight / 2);
+        textSize(15);
+        text("Click me!", canvasWidth / 2, canvasHeight / 2);
+        textSize(12);
+        text("Stop and then click to randomly change colors and patterns.", canvasWidth / 2, canvasHeight / 2 + 20)
         infomartionCount++;
     }
     for (let i = 0; i < circleColorTerget.length; i++) {
@@ -302,11 +317,22 @@ function draw() {
                         position[0] += (target2[0] - position[0]) * 0.05; // 0.05はボールの移動速度を調整するための値
                         position[1] += (target2[1] - position[1]) * 0.05; // 0.05はボールの移動速度を調整するための値
                         targetCount[i]++;
-                    }else if (randomMode == 3) {
-                        position[0] += (target2[0] - position[0]) * 0.05; // 0.05はボールの移動速度を調整するための値
-                        position[1] += (target2[1] - position[1]) * 0.05; // 0.05はボールの移動速度を調整するための値
-                        //円のやつインタラ2
-                        targetCount[i]++;
+                    } else if (randomMode == 3) {
+                        // if (target3CircleBoolean) {
+                        //     target3Circle.push(k);
+                        //     target3Circle.push(100);
+                        //     target3 = i;
+                        //     target3CircleBoolean = false;
+                        // } else if (target3CircleBoolean == false)  {
+                        // position[0] += (target3Circle[0] - position[0]) * 0.01; // 0.05はボールの移動速度を調整するための値
+                        // position[1] += (target3Circle[1] - position[1]) * 0.01; // 0.05はボールの移動速度を調整するための値
+                        // if(target3 == i){
+                        //     target3Circle[0] ++;
+                        // }
+                        // //円のやつインタラ2
+                        // targetCount[i] += 0.5;
+                        // // console.log(target3Circle);
+                        // }
                     }
                 }
             } else {
@@ -317,16 +343,16 @@ function draw() {
                 targetBoolean[i] = false;
                 if (i == 1) {
                     circleColorBoolean = true;
-                    randomMode = int(random(4));
+                    randomMode = int(random(3));
+                    // target3Circle.length = 0;
+                    // target3CircleBoolean = true;
                 }
-              
                 // information[i] = true;
-                console.log(randomMode);
+                // console.log(randomMode);
             }
         }
     }
     infomartionCount = 0;
-    //   console.log(randomMode);
 }
 
 function mouseClicked() {
