@@ -12,19 +12,19 @@
   <link rel="stylesheet" href="./assets/slick.css">
   <link rel="stylesheet" href="./assets/slick-theme.css">
 
-  <!-- cssの導入 hrefがURL -->
-  <!-- <link rel="stylesheet" href="style.css"> -->
 
-  <!-- JSの導入 -->
+
   <link href="./assets/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
-  <!-- <link href="https://getbootstrap.jp/docs/5.3/assets/css/docs.css" rel="stylesheet" /> -->
+  <link href="./assets/docs.css" rel="stylesheet" />
 
   <title>Riku Kimura Portfolio</title>
 
 </head>
 
-<body class="m-0 border-0 bd-example m-0 border-0">
+<!-- <body class="m-0 border-0 bd-example m-0 border-0"> -->
+
+<body class="">
 
   <div class="container-fluid pt-5 mt-3 p-3">
     <nav class="navbar navbar-dark bg-dark fixed-top">
@@ -54,7 +54,7 @@
                   Works
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark">
-                  <li><a class="dropdown-item" href="./Works/WebVR.html">AFRICAFE</a></li>
+                  <li><a class="dropdown-item" href="./Works/AFRICAFE.html">AFRICAFE</a></li>
                   <li><a class="dropdown-item" href="./Works/TAMABLE.html">TAMABLE</a></li>
                   <li><a class="dropdown-item" href="#">PILOT</a></li>
                   <li><a class="dropdown-item" href="#">SESSION</a></li>
@@ -85,7 +85,7 @@
           <a href="#about-header">About</a>
         </div>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-          <a href="#projects-header">Works</a>
+          <a href="#works-header">Works</a>
         </div>
       </div>
     </div>
@@ -98,61 +98,118 @@
       ABOUT
     </p>
 
-    <p class="small">
-    <div class="container">
-      <div class="row">
-        <div class="col-5">
-          大学 : <br>
-          研究室 : <br>
-          お問い合わせ : <br><br>
-          専門技術 : <br>
-        </div>
-        <div class="col-7">
-          明星大学情報学部情報学科<br>
-          尼岡利崇研究室 <br>
-          21j5141@stu.meisei-u.ac.jp <br><br>
-          Processing、Arduino、 P5.js、 P5.toio、 Python、 プロジェクションマッピング、 Aframe <br>
 
-          <br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="grid gap-0 row-gap-3">
+      <div class="p-2 g-col-3">
+        <img src="./img/profile_img.jpg" alt="">
+      </div>
+      <div class="p-2 g-col-9">
+        <div class="grid gap-0 row-gap-3 lh-lg">
+          <p class="g-col-4 fw-bold">大学 :</p>
+          <p class="g-col-8"> 明星大学情報学部情報学科</p>
+          <p class="g-col-4 fw-bold">研究室 :</p>
+          <p class="g-col-8"> 尼岡利崇研究室</p>
+          <p class="g-col-4 fw-bold">お問い合わせ :</p>
+          <p class="g-col-8"> 21j5141@stu.meisei-u.ac.jp</p>
+          <p class="g-col-4 fw-bold">GITHUB:</p>
+          <a class="g-col-8" href="https://github.com/kimuraRikuKimu">kimuraRikuKimu</a>
+          <p class="g-col-4 fw-bold">専門技術 :</p>
+          <p class="g-col-8"> Processing、Arduino、 P5.js、 P5.toio、 Python、C、 プロジェクションマッピング、 Aframe</p>
+
+
+
         </div>
       </div>
     </div>
-    </p>
+
     <p class="text-center h2 mt-5 bg-secondary text-white rounded-pill p-0">
       WORKS
     </p>
 
     <div id="carouselExampleCaptions" class="carousel carousel-dark slide">
 
-      <div class="carousel-inner">
-        <div id="projects-header" class="carousel-item active" data-bs-interval="10000">
-          <a href="./Works/WebVR.html">
-            <img src="./img/WebVR.png" class="d-block mx-auto w-50" alt="...">
+      <div id="works-header" class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <a href="./Works/AFRICAFE.html">
+            <img src="./img/AFRICAFE/AFRICAFE_1.png" class="d-block mx-auto w-50" alt="...">
           </a>
+          <div class="text-center">
+            <p class="fw-bold "><u>Africafe 2022 <br> ～ウスビ・サコ先生と語る教育と未来～</u></p>
+            <p class="fw-light">WebVR（Aframe）/ HTML / JavaScript</p>
+            <p class="fw-light small">
+              私が2年生の12月頃、パルテノン多摩で開催された「アフリカフェ」というイベントで、運営側として参加しました。
+              <br>
+              その際に、WebVRを使用してアフリカの文化や衣装、魅力を伝える作品を制作しました。
+            </p>
+            <a href="./Works/AFRICAFE.html" class="btn btn-outline-secondary btn-sm" role="button" aria-disabled="true">
+              more
+            </a>
+
+          </div>
+
         </div>
         <div class="carousel-item" data-bs-interval="2000">
-          <!-- まだURL入れてない（入れたら消す) -->
           <a href="./Works/TAMABLE.html">
-            <img src="./img/S1_2.jpg" class="d-block mx-auto w-50" alt="...">
+            <img src="./img/TAMABLE/TAMABLE_1.jpg" class="d-block mx-auto w-50" alt="...">
           </a>
+          <div class="text-center">
+            <p class="fw-bold "><u>TAMABLE展 <br> ～Bloom People Flower～</u></p>
+            <p class="fw-light">Kinect / Processing / プロジェクションマッピング</p>
+            <p class="fw-light small">
+              TAMABLE展で「Bloom People Flower」という作品と、「AFRICAFE」で製作したWebVRを展示しました。
+              
+            </p>
+            <a href="./Works/TAMABLE.html" class="btn btn-outline-secondary btn-sm" role="button" aria-disabled="true">
+              more
+            </a>
+          </div>
         </div>
         <div class="carousel-item">
           <!-- まだURL入れてない（入れたら消す) -->
-          <a href="./Works/WebVR.html">
-            <img src="./img/S1_3.jpg" class="d-block mx-auto w-50" alt="...">
+          <a href="./Works/PILOT.html">
+            <img src="./img/PILOT/PILOT_1.jpg" class="d-block mx-auto w-50" alt="...">
           </a>
+          <div class="text-center">
+            <p class="fw-bold "><u></u></p>
+            <p class="fw-light"></p>
+            <p class="fw-light small">
+            </p>
+            <a href="./Works/PILOT.html" class="btn btn-outline-secondary btn-sm" role="button" aria-disabled="true">
+              more
+            </a>
+          </div>
         </div>
         <div class="carousel-item">
           <!-- まだURL入れてない（入れたら消す) -->
-          <a href="./Works/WebVR.html">
-            <img src="./img/S1_4.jpg" class="d-block mx-auto w-50" alt="...">
+          <a href="./Works/SESSION.html">
+            <img src="./img/SESSION/SESSION_1.jpg" class="d-block mx-auto w-50" alt="...">
           </a>
+          <div class="text-center">
+            <p class="fw-bold "><u></u></p>
+            <p class="fw-light"></p>
+            <p class="fw-light small">
+
+            </p>
+            <a href="./Works/SESSION.html" class="btn btn-outline-secondary btn-sm" role="button" aria-disabled="true">
+              more
+            </a>
+          </div>
         </div>
         <div class="carousel-item">
           <!-- まだURL入れてない（入れたら消す) -->
-          <a href="./Works/WebVR.html">
-            <img src="./img/S1_5.jpg" class="d-block mx-auto w-50" alt="...">
+          <a href="./Works/HUNGA_RE_COLLECTION.html">
+            <img src="./img/HUNGA_RE_COLLECTION/HUNGA_RE_COLLECTION_1.jpg" class="d-block mx-auto w-50" alt="...">
           </a>
+          <div class="text-center">
+            <p class="fw-bold "><u></u></p>
+            <p class="fw-light"></p>
+            <p class="fw-light small">
+
+            </p>
+            <a href="./Works/HUNGA_RE_COLLECTION.html" class="btn btn-outline-secondary btn-sm" role="button" aria-disabled="true">
+              more
+            </a>
+          </div>
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
@@ -167,15 +224,19 @@
       </button>
     </div>
 
+
+
+
     <br>
-    <ul class="slider">
+
+    <!-- <ul class="slider">
       <li><img src="https://placekitten.com/200/200" alt=""></li>
       <li><img src="https://placekitten.com/200/200" alt=""></li>
       <li><img src="https://placekitten.com/200/200" alt=""></li>
       <li><img src="https://placekitten.com/200/200" alt=""></li>
       <li><img src="https://placekitten.com/200/200" alt=""></li>
       <li><img src="https://placekitten.com/200/200" alt=""></li>
-    </ul>
+    </ul> -->
 
 
   </div>

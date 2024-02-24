@@ -5,25 +5,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- cssの導入 hrefがURL -->
-    <!-- <link rel="stylesheet" href="style.css"> -->
 
-    <!-- JSの導入 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
-    <!-- <link href="https://getbootstrap.jp/docs/5.3/assets/css/docs.css" rel="stylesheet" /> -->
+    <link href="../assets/docs.css" rel="stylesheet" />
 
-    <!-- webのバーの名前が変わる -->
+
     <title>Riku Kimura Portfolio - TAMABLE</title>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-    crossorigin="anonymous"></script> -->
 </head>
 
-<body class="p-3 m-0 border-0 bd-example m-0 border-0">
-    <!-- ブートストラップのトップページにある！NavBarをやるための -->
-
-    <!-- CSSを入れるときはclass！JSはid!(#) -->
+<body class="">
 
     <div class="container-fluid pt-5">
         <nav class="navbar navbar-dark bg-dark fixed-top">
@@ -55,28 +46,19 @@
                                     Works
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="./WebVR.html">AFRICAFE</a></li>
+                                    <li><a class="dropdown-item" href="./AFRICAFE.html">AFRICAFE</a></li>
                                     <li><a class="dropdown-item" href="./TAMABLE.html">TAMABLE</a></li>
                                     <li><a class="dropdown-item" href="#">PILOT</a></li>
                                     <li><a class="dropdown-item" href="#">SESSION</a></li>
                                     <li><a class="dropdown-item" href="#">Hunga -Re- Collection</a></li>
-                                    <!-- <li>
-                    <hr class="dropdown-divider">
-                  </li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+
                                 </ul>
                             </li>
                         </ul>
-                        <!-- <form class="d-flex mt-3" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-success" type="submit">Search</button>
-            </form> -->
                     </div>
                 </div>
             </div>
         </nav>
-        <!-- 余白を開ける為に、mt-5! -->
-        <!-- リンクに飛ぶ方法 -->
         <p class="text-center h2 mt-3 bg-secondary text-white rounded-pill p-0">
             WORKS
         </p>
@@ -85,19 +67,16 @@
 
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="10000">
-                    <img src="../img/S1_2.jpg" class="d-block mx-auto w-75" alt="...">
+                    <img src="../img/TAMABLE/TAMABLE_1.jpg" class="d-block mx-auto w-75" alt="...">
                 </div>
                 <div class="carousel-item" data-bs-interval="2000">
-                    <img src="../img/Flower.png" class="d-block mx-auto w-50" alt="...">
+                    <img src="../img/TAMABLE/TAMABLE_2.jpg" class="d-block mx-auto w-75" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="../img/1366x768.png" class="d-block mx-auto w-75" alt="...">
+                    <img src="../img/TAMABLE/TAMABLE_3.jpg" class="d-block mx-auto w-75" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="../img/1366x768.png" class="d-block mx-auto w-75" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="../img/1366x768.png" class="d-block mx-auto w-75" alt="...">
+                    <video src="../video/TAMABLE.mp4" class="d-block mx-auto w-75" controls alt="..."> </video>
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
@@ -122,37 +101,49 @@
                 </div>
                 <div class="description">
                     <p class="text-center fs-5">
-                        使用技術:Kinect、 Processing、プロジェクションマッピング
+                        Kinect / Processing / プロジェクションマッピング<br><br>
                     </p>
                     <p>
-                        TAMABLE展では、「Bloom People Flower」という作品を展示しました。
+                        TAMABLE展で「Bloom People Flower」という作品と、「AFRICAFE」で製作したWebVRを展示しました。<br><br>
+                        <a href="./AFRICAFE.html">AFRICAFE(WebVR)はこちら</a><br><br>
+                        この「Bloom People Flower」という作品は、来場者を花びらとして可視化するアート作品です。<br>
+                        展示スペース内に配置されたKinectセンサーが来場者を検知すると、額縁内の枯れた木の絵に人数分の葉がランダムに現れます。<br>
+                        そして時間の経過とともにこの葉は、蕾が咲き、花が咲くといったように徐々に成長していき、また色も移り変わっていく為、来場者は気付かない内にこのアートの一部になる作品となっています。<br><br>
 
-                        この作品は、情報技術を駆使して、来場者を花びらとして可視化することで、インタラクティブなアート体験を提供します。展示スペース内に配置されたKinectセンサーが来場者を検知すると、画面上に緑色の丸が現れ、まるで花のつぼみのように芽吹きます。そして、時間の経過とともに、この花は徐々に成長し、色彩豊かな花びらを広げていきます。その変化は、季節の移り変わりや自然界の営みを模倣し、来場者に豊かな感覚体験をもたらします。
+                        制作過程では、新しい技術を取り入れることが難しいと感じました。特に、Kinectセンサーを使用して来場者を認識し、リアルタイムで花びらとして表現する部分は、チーム全員がまだ扱ったことのない技術でした。<br>
+                        その為、チーム全体で基礎固めからしていき、分からないところがあれば共有し合い、問題解決に取り組みました。<br>
+                        さらに、作品を制作するにあたっては、時間とリソースの制約もありました。しかし、それらを克服するために今の自分たちの技術力で作品を最大限魅せれるように取り組んだ結果、完成させることができました。<br><br>
 
-                        この作品は、来場者の参加が作品の核心となっています。彼らの動きや存在が、花の成長と変化に直接的に反映されるため、参加者は作品の一部として自身の存在を感じ取ることができます。このような体験を通じて、来場者は街の一部として彩りを添えることが出来ます。<br><br>
-
-                        制作過程では、新しい技術を取り入れることが難しいと感じました。特に、Kinectセンサーを使用して来場者を認識し、リアルタイムで花びらとして表現する部分は、技術的な課題に直面しました。そのため、チーム全体で協力し、問題解決に取り組みました。さらに、作品を制作するにあたっては、時間とリソースの制約もありましたが、それらを克服するためにチーム全体で協力し、完成させることができました。
-
-                        展示期間中、多くの来場者からフィードバックをいただきました。特に、参加者が作品に触れるという体験が喜ばれました。来場者は、自分の動きや存在が作品に反映されることに驚き、その美しい変化に魅了してくれました。また、作品が街の一部として参加者と共に成長する概念についても好評でした。
-
-                        来場者数については、TAMABLE展の1日目には58人、2日目には52人の計110人の来場者がありました。展示会場には多くの人々が訪れ、作品に興味を持ってくれたことがわかりました。展示会場に訪れた人々との交流を通じて、私たちはさらに多摩地区の魅力を広める機会を得ることができました。
-
+                        展示期間2二日間行われ、1日目に58人、2日目に52人の計110人の来場者がありました。
+                        また、展示期間中に多くの来場者からフィードバックをいただき、特に参加者が作品に触れるという体験と、
+                        作品が街の一部として参加者と共に成長する概念についてとても好評で、作品に興味を持ってくれて嬉しかったです。<br><br>
+                    </p>
+                    <p>
+                        『TAMABLEは明星大学が位置する"多摩"地区を意味する「TAMA」と"できる"、"可能な"を意味する「able」を組み合わせた造語です。
+                        情報学を利用して多摩地区のさらなる可能性を引き出すという意味が込められています。
+                        来場者が情報技術を駆使して制作された作品を通し、多摩地区の公共性を捉え直すきっかけを提供することを目的としています。（TAMABLE展 概要URL:
+                        <a href="https://www.meisei-u.ac.jp/2023/2023020102.html" target="_blank">
+                            TAMABLE展
+                        </a>
+                        ）』<br>
                     </p>
                     <p>
 
                     </p>
                 </div>
             </div>
-
-
         </div>
-
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    <footer class="footer mt-4 py-3 bg-light">
+        <div class="text-center">
+            <span class="text-muted">© 2024 Riku Kimura</span>
+        </div>
+    </footer>
+
+    <script src="./assets/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
-    <script src="../assets/p5.min.js"></script>
     <script src="../js/script.js"></script>
 
 </body>
