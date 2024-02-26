@@ -223,7 +223,8 @@ function draw() {
         textSize(15);
         text("Click me!", canvasWidth / 2, canvasHeight / 2);
         textSize(12);
-        text("Stop and then click to randomly change colors and patterns.", canvasWidth / 2, canvasHeight / 2 + 20)
+        text("Stop and then click to randomly", canvasWidth / 2 , canvasHeight / 2 + 20)
+        text("change colors and patterns.", canvasWidth / 2 , canvasHeight / 2 + 40)
         infomartionCount++;
     }
     for (let i = 0; i < circleColorTerget.length; i++) {
