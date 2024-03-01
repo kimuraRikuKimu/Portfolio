@@ -10,6 +10,8 @@
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
     <link href="../assets/docs.css" rel="stylesheet" />
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
 
     <title>Riku Kimura Portfolio - SESSION</title>
 </head>
@@ -50,7 +52,8 @@
                                     <li><a class="dropdown-item" href="./TAMABLE.html">TAMABLE</a></li>
                                     <li><a class="dropdown-item" href="./PILOT.html">PILOT</a></li>
                                     <li><a class="dropdown-item" href="./SESSION.html">SESSION</a></li>
-                                    <li><a class="dropdown-item" href="./HUNGA_RE_COLLECTION.html">Hunga -Re- Collection</a></li>
+                                    <li><a class="dropdown-item" href="./HUNGA_RE_COLLECTION.html">Hunga -Re-
+                                            Collection</a></li>
 
                                 </ul>
                             </li>
@@ -67,13 +70,19 @@
 
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="10000">
-                    <img src="../img/SESSION/SESSION_1.jpg" class="d-block mx-auto w-75" alt="...">
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                    <img src="../img/1366x768.png" class="d-block mx-auto w-75" alt="...">
+                    <a href="../img/SESSION/SESSION_5.png" data-lightbox="group">
+                        <img src="../img/SESSION/SESSION_5.png" class="d-block mx-auto w-50 rounded float3" alt="...">
+                    </a>
                 </div>
                 <div class="carousel-item">
-                    <img src="../img/1366x768.png" class="d-block mx-auto w-75" alt="...">
+                    <a href="../img/SESSION/SESSION_7.jpg" data-lightbox="group">
+                        <img src="../img/SESSION/SESSION_7.jpg" class="d-block mx-auto w-50 rounded float3" alt="...">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="../img/SESSION/SESSION_6.png" data-lightbox="group">
+                        <img src="../img/SESSION/SESSION_6.png" class="d-block mx-auto w-50 rounded float3" alt="...">
+                    </a>
                 </div>
                 <!-- <div class="carousel-item">
                     <video src="../video/TAMABLE.mp4" class="d-block mx-auto w-75" controls alt="..."> </video>
@@ -100,16 +109,84 @@
                     </div>
                 </div>
                 <div class="description">
-                    <p class="text-center fs-5 fw-bold">作品: &thinsp;<a href="https://github.com/kimuraRikuKimu" target="_blank">The Foresrone</a> 
+                    <p class="text-center fs-5 fw-bold">作品: &thinsp;<a href="../video/The_Plantone_2.mp4"
+                            target="_blank">The Plantone</a>
+                    </p>
+                    <p class="text-center fs-5 fw-bold">GITHUB: &thinsp;<a
+                            href="https://github.com/kimuraRikuKimu/TheForesrone" target="_blank">The Foresrone
+                            GITHUB</a>
                     </p>
                     <p class="text-center fs-5 fw-bold">
                         Processing / Arduino / Tello SDK<br><br>
                     </p>
-                   2023年の3年生前期の授業で、ドローンと植物をつないだ「The Foresrone」という作品を制作しました。
+                    2023年の3年生前期に、ドローンと植物をつないだ「The Plantone」という作品を制作しました。<br>
+                    <br>
+                    この作品は一見無理だと思われる事を実際した際に、ユーザーが驚いてくれる体験を提供したく製作しました。<br>
+                    操作は「起動」「前進」「後退」「左回り」「右回り」「アップ」「ダウン」「緊急停止」の８つです。
+                    操作方法はいたってシンプルで、植物を触るだけで飛び立つことが出来ます。
+                    その為小さな子供でも動かせられ、面白いと思わせられるような作品です。
+                    <br><br>
+
+                    この作品を制作した過程として、まず最初は上記に書いてあるコンセプト作りをしました。
+                    コンセプトをどうするか考えている途中で植物と音や植物と映像をつなぐ情報技術の動画
+                    を思い出し、そして面白そうだと思った為、自作で作ってみようと考えました。<br><br>
+
+                    <a href="https://www.youtube.com/watch?v=EcRSKEIucjk" target="_blank">
+                        <p class="text-center">参考にした動画</p>
+                    </a> <br>
+
+                    次に物体に触ると反応する技術をどうやって作るか考えました。<br>
+                    調べていくとタッチセンサーの技術でON/OFFを切り替えられるサイトがあったので
+                    そちらを参考にタッチセンサーの原理を理解して製作に取り組みました。
+                    静電容量の変化量に応じて充電する時間も変化する為、その時間を計測して
+                    触ったかを判断しており、これによってONとOFFを切り替えています。
+                    <br><br>
+
+                    <a href="https://www.mirai-kougaku.jp/laboratory/pages/200911.php" target="_blank">
+                        <p class="text-center">参考にしたサイト</p>
+                    </a><br>
+
+
+                    その次にタッチセンサーを植物に埋め込み、実際に反応するか試しました。<br>
+                    植物の茎にジャンプワイヤーのピンを刺して実験してみたところ、
+                    茎付近では反応はしたが、葉先に近づくほど反応が鈍かったり反応がない時がありました。<br>
+                    原因を探してみたところ、静電容量の変化量が足りなく、変化量を増やす必要があった為、
+                    反対の手にGND（グランド）と繋がっている配線のリストバンドを付け、
+                    電気の逃げ道を作ってあげると反応が良くなり遠くまで感知してしてくれました。<br>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <a href="../img/SESSION/SESSION_3.jpg" data-lightbox="group2">
+                                <img src="../img/SESSION/SESSION_3.jpg"
+                                    class="m-3 img-fluid rounded float-end w-50 float3" alt="...">
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="../img/SESSION/SESSION_4.jpg" data-lightbox="group2">
+                                <img src="../img/SESSION/SESSION_4.jpg"
+                                    class="m-3 img-fluid rounded float-start w-50 float3" alt="...">
+                            </a>
+                        </div>
+
+
+                        最後は作品をより良く魅せるように配置等を工夫しました。
+                        操作8つが分かるように配置する為に、ゲームのコントローラーのように配置し、
+                        「起動」「緊急停止」は植木鉢の色や大きさを変えるようにしました。
+                        また、作品に合うように背景には蝶が沢山飛んでいる音と映像をProcessingで作成しました。<br><br>
+
+                        制作後記としまして、今回の作品は植物全体がタッチセンサーとなるように
+                        試行錯誤を繰り返していた為、労力と時間が凄いかかり大変でした。
+                        今回は植物でドローンを飛ばしましたが、他にも植物を触ると音が鳴るようにすることや、
+                        触ると映像グラフィックに何か演出が起こる作品などを今後作る際に、今回の技術が役に立つと思うので
+                        「The Plantone」を制作出来、とても良かったです。
+
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
+
 
     <footer class="footer mt-4 py-3 bg-light">
         <div class="text-center">
@@ -121,6 +198,8 @@
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
     <script src="../js/script.js"></script>
+    <script src="../assets/jquery-3.7.1.min.js"></script>
+    <script src="../assets/lightbox.min.js" type="text/javascript"></script>
 
 </body>
 
