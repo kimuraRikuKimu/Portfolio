@@ -18,6 +18,8 @@
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
   <link href="./assets/docs.css" rel="stylesheet" />
 
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
+
   <title>Riku Kimura Portfolio</title>
 
 </head>
@@ -25,213 +27,232 @@
 <!-- <body class="m-0 border-0 bd-example m-0 border-0"> -->
 
 <body class="">
+  <div id="splash">
+    <div id="splash_text"></div>
+    <div class="loader_cover loader_cover-up"></div><!--上に上がるエリア-->
+    <div class="loader_cover loader_cover-down"></div><!--下に下がるエリア-->
+    <!--/splash-->
+  </div>
+  <div id="container">
 
-  <div class="container-fluid pt-5 mt-3 p-3">
-    <nav class="navbar navbar-dark bg-dark fixed-top">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Portfolio</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
-          aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
-          aria-labelledby="offcanvasDarkNavbarLabel">
-          <div class="offcanvas-header">
-            <a href="index.html">
+    <div class="container-fluid pt-5 mt-3 p-3">
+      <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">Portfolio</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+            aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+            aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+
               <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Portfolio</h5>
-            </a>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-              aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#about-header">ABOUT</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Works
-                </a>
-                <ul class="dropdown-menu dropdown-menu-dark">
-                  <li><a class="dropdown-item" href="./Works/AFRICAFE.html">AFRICAFE</a></li>
-                  <li><a class="dropdown-item" href="./Works/TAMABLE.html">TAMABLE</a></li>
-                  <li><a class="dropdown-item" href="./Works/PILOT.html">PILOT</a></li>
-                  <li><a class="dropdown-item" href="./Works/SESSION.html">SESSION</a></li>
-                  <li><a class="dropdown-item" href="./Works/HUNGA_RE_COLLECTION.html">Hunga -Re- Collection</a></li>
-                  <!-- <li>
+
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#about-header">ABOUT</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Works
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item" href="./Works/AFRICAFE.html">AFRICAFE</a></li>
+                    <li><a class="dropdown-item" href="./Works/TAMABLE.html">TAMABLE</a></li>
+                    <li><a class="dropdown-item" href="./Works/PILOT.html">PILOT</a></li>
+                    <li><a class="dropdown-item" href="./Works/SESSION.html">SESSION</a></li>
+                    <li><a class="dropdown-item" href="./Works/HUNGA_RE_COLLECTION.html">Hunga -Re- Collection</a></li>
+                    <!-- <li>
                     <hr class="dropdown-divider">
                   </li>
                   <li><a class="dropdown-item" href="#">Something else here</a></li> -->
-                </ul>
-              </li>
-            </ul>
-            <!-- <form class="d-flex mt-3" role="search">
+                  </ul>
+                </li>
+              </ul>
+              <!-- <form class="d-flex mt-3" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-success" type="submit">Search</button>
             </form> -->
+            </div>
+          </div>
+        </div>
+      </nav>
+
+
+
+      <div id="canvas-parent" class="hero position-relative pt-5">
+        <div class="px-4 py-5 text-center pt-5">
+          <br><br><br><br><br>
+          <h1 class="display-2"> </h1>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center pt-5">
+            <a href="#about-header">About</a>
+          </div>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a href="#works-header">Works</a>
           </div>
         </div>
       </div>
-    </nav>
 
 
-
-    <div id="canvas-parent" class="hero position-relative pt-5">
-      <div class="px-4 py-5 text-center pt-5">
-        <br><br><br><br><br>
-        <h1 class="display-2"> </h1>
-        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center pt-5">
-          <a href="#about-header">About</a>
-        </div>
-        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-          <a href="#works-header">Works</a>
-        </div>
-      </div>
-    </div>
+      <p id="about-header">
+        <br><br>
+      </p>
+      <p class="text-center h2 bg-secondary text-white mt-3 rounded-pill p-0">
+        ABOUT
+      </p>
 
 
-    <p id="about-header">
-      <br><br>
-    </p>
-    <p class="text-center h2 bg-secondary text-white mt-3 rounded-pill p-0">
-      ABOUT
-    </p>
-
-
-    <div class="grid gap-0 row-gap-3">
-      <div class="p-2 g-col-3">
-        <img src="./img/profile_img.jpg" class=" rounded" alt="">
-      </div>
-      <div class="p-2 g-col-9">
-        <div class="grid gap-0 row-gap-3 lh-lg">
-          <p class="g-col-4 fw-bold">大学 :</p>
-          <p class="g-col-8"> 明星大学情報学部情報学科</p>
-          <p class="g-col-4 fw-bold">研究室 :</p>
-          <p class="g-col-8"> 尼岡利崇研究室</p>
-          <p class="g-col-4 fw-bold">お問い合わせ :</p>
-          <p class="g-col-8"> 21j5141@stu.meisei-u.ac.jp</p>
-          <p class="g-col-4 fw-bold">GITHUB:</p>
-          <a class="g-col-8" href="https://github.com/kimuraRikuKimu">kimuraRikuKimu</a>
-          <p class="g-col-4 fw-bold">専門技術 :</p>
-          <p class="g-col-8"> Processing、Arduino、 P5.js、 P5.toio、 Python、C、 Projection Mapping、 Aframe、 Tello SDK</p>
-
-
-
-        </div>
-      </div>
-    </div>
-
-    <p class="text-center h2 mt-5 bg-secondary text-white rounded-pill p-0">
-      WORKS
-    </p>
-
-    <div id="carouselExampleCaptions" class="carousel carousel-dark slide">
-
-      <div id="works-header" class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="10000">
-          <a href="./Works/AFRICAFE.html">
-            <img src="./img/AFRICAFE/AFRICAFE_1.png" class="d-block mx-auto w-50 rounded float3" alt="...">
+      <div class="grid gap-0 row-gap-3">
+        <div class="p-2 g-col-3">
+          <a href="./img/profile_img.jpg" data-lightbox="groupProfile">
+            <img src="./img/profile_img.jpg" class="rounded float3" alt="...">
           </a>
-          <div class="text-center">
-            <p class="fw-bold "><u>Africafe 2022 <br> ～WebVR～</u></p>
-            <p class="fw-light fw-bold">WebVR（Aframe）/ HTML / JavaScript</p>
-            <p class="fw-light small">
-              2022年12月16日にパルテノン多摩で開催された「AFRICAFE」というイベントで、運営側として参加しました。
-              <br>
-              その際に、WebVRを使用してアフリカの文化や衣装、魅力を伝える作品を制作しました。
-            </p>
-            <a href="./Works/AFRICAFE.html" class="btn btn-outline-secondary btn-sm" role="button" aria-disabled="true">
-              more
-            </a>
-
-          </div>
-
         </div>
-        <div class="carousel-item" data-bs-interval="2000">
-          <a href="./Works/TAMABLE.html">
-            <img src="./img/TAMABLE/TAMABLE_1.jpg" class="d-block mx-auto w-50 rounded float3" alt="...">
-          </a>
-          <div class="text-center">
-            <p class="fw-bold "><u>TAMABLE展 <br> ～Bloom People Flower～</u></p>
-            <p class="fw-light fw-bold"> Processing / Kinect / Projection Mapping</p>
-            <p class="fw-light small">
-              2023年2月11日にTAMABLE展で「Bloom People Flower」という作品と、AFRICAFEで製作した「WebVR」を展示しました。
+        <div class="p-2 g-col-9">
+          <div class="grid gap-0 row-gap-3 lh-lg">
+            <p class="g-col-4 fw-bold">大学 :</p>
+            <p class="g-col-8"> 明星大学情報学部情報学科</p>
+            <p class="g-col-4 fw-bold">研究室 :</p>
+            <p class="g-col-8"> 尼岡利崇研究室</p>
+            <p class="g-col-4 fw-bold">お問い合わせ :</p>
+            <p class="g-col-8"> 21j5141@stu.meisei-u.ac.jp</p>
+            <p class="g-col-4 fw-bold">GITHUB:</p>
+            <a class="g-col-8" href="https://github.com/kimuraRikuKimu">kimuraRikuKimu</a>
+            <p class="g-col-4 fw-bold">専門技術 :</p>
+            <p class="g-col-8"> Processing, Arduino, P5.js, P5.toio, Python, C, Projection Mapping, Aframe, Tello SDK
+            </p>
 
-            </p>
-            <a href="./Works/TAMABLE.html" class="btn btn-outline-secondary btn-sm" role="button" aria-disabled="true">
-              more
-            </a>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <!-- まだURL入れてない（入れたら消す) -->
-          <a href="./Works/PILOT.html">
-            <img src="./img/PILOT/PILOT_1.jpg" class="d-block mx-auto w-50 rounded float3" alt="...">
-          </a>
-          <div class="text-center">
-            <p class="fw-bold "><u>PILOT展<br>～Invisible Gage～</u></p>
-            <p class="fw-light fw-bold"> Processing / Kinect / Projection Mapping</p>
-            <p class="fw-light small">
-              2023年7月19日、明星大学構内で2日間にわたり開催されたPILOT展で、Projection Mapping班として「Invisible Gage」という作品を展示しました。
-            </p>
-            <a href="./Works/PILOT.html" class="btn btn-outline-secondary btn-sm" role="button" aria-disabled="true">
-              more
-            </a>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <!-- まだURL入れてない（入れたら消す) -->
-          <a href="./Works/SESSION.html">
-            <img src="./img/SESSION/SESSION_5.png" class="d-block mx-auto w-50 rounded float3" alt="...">
-          </a>
-          <div class="text-center">
-            <p class="fw-bold "><u> ドローン×植物<br>～The Foresrone～</u></p>
-            <p class="fw-light fw-bold">Processing / Arduino / Tello SDK</p>
-            <p class="fw-light small">
-              2023年の3年生前期に、ドローンと植物をつないだ「The Foresrone」という作品を制作しました。
-            </p>
-            <a href="./Works/SESSION.html" class="btn btn-outline-secondary btn-sm" role="button" aria-disabled="true">
-              more
-            </a>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <!-- まだURL入れてない（入れたら消す) -->
-          <a href="./Works/HUNGA_RE_COLLECTION.html">
-            <img src="./img/HUNGA_RE_COLLECTION/HUNGA_RE_COLLECTION_1.jpg" class="d-block mx-auto w-50 rounded float3" alt="...">
-          </a>
-          <div class="text-center">
-            <p class="fw-bold "><u></u></p>
-            <p class="fw-light fw-bold"></p>
-            <p class="fw-light small">
 
-            </p>
-            <a href="./Works/HUNGA_RE_COLLECTION.html" class="btn btn-outline-secondary btn-sm float3" role="button"
-              aria-disabled="true">
-              more
-            </a>
+
           </div>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
+
+      <p class="text-center h2 mt-5 bg-secondary text-white rounded-pill p-0">
+        WORKS
+      </p>
+
+      <div id="carouselExampleCaptions" class="carousel carousel-dark slide">
+
+        <div id="works-header" class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <a href="./img/AFRICAFE/AFRICAFE_1.png" data-lightbox="group1">
+              <img src="./img/AFRICAFE/AFRICAFE_1.png" class="d-block mx-auto w-50 rounded float3" alt="...">
+            </a>
+            <div class="text-center">
+              <p class="fw-bold "><u>Africafe 2022 <br> ～WebVR～</u></p>
+              <p class="fw-light fw-bold">WebVR(Aframe), HTML, JavaScript</p>
+              <p class="fw-light small">
+                2022年12月16日にパルテノン多摩で開催された「AFRICAFE」というイベントで、運営側として参加しました。
+                <br>
+                その際に、WebVRを使用してアフリカの文化や衣装、魅力を伝える作品を制作しました。
+              </p>
+              <a href="./Works/AFRICAFE.html" class="btn btn-outline-secondary btn-sm" role="button"
+                aria-disabled="true">
+                more
+              </a>
+
+
+            </div>
+
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <a href="./img/TAMABLE/TAMABLE_3.jpg" data-lightbox="group2">
+              <img src="./img/TAMABLE/TAMABLE_3.jpg" class="d-block mx-auto w-50 rounded float3" alt="...">
+            </a>
+            <div class="text-center">
+              <p class="fw-bold "><u>TAMABLE展 <br> ～Bloom People Flower～</u></p>
+              <p class="fw-light fw-bold"> Processing, Kinect, Projection Mapping</p>
+              <p class="fw-light small">
+                2023年2月11日にTAMABLE展で「Bloom People Flower」という作品と、AFRICAFEで製作した「WebVR」を展示しました。
+
+              </p>
+              <a href="./Works/TAMABLE.html" class="btn btn-outline-secondary btn-sm" role="button"
+                aria-disabled="true">
+                more
+              </a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <!-- まだURL入れてない（入れたら消す) -->
+            <a href="./img/PILOT/PILOT_2.jpg" data-lightbox="group3">
+              <img src="./img/PILOT/PILOT_2.jpg" class="d-block mx-auto w-50 rounded float3" alt="...">
+            </a>
+            <div class="text-center">
+              <p class="fw-bold "><u>PILOT展<br>～Invisible Gage～</u></p>
+              <p class="fw-light fw-bold"> Processing, Kinect, Projection Mapping</p>
+              <p class="fw-light small">
+                2023年7月19日、明星大学構内で2日間にわたり開催されたPILOT展で、Projection Mapping班として「Invisible Gage」という作品を展示しました。
+              </p>
+              <a href="./Works/PILOT.html" class="btn btn-outline-secondary btn-sm" role="button" aria-disabled="true">
+                more
+              </a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <!-- まだURL入れてない（入れたら消す) -->
+            <a href="./img/SESSION/SESSION_5.png" data-lightbox="group4">
+              <img src="./img/SESSION/SESSION_5.png" class="d-block mx-auto w-50 rounded float3" alt="...">
+            </a>
+            <div class="text-center">
+              <p class="fw-bold "><u> ドローン×植物<br>～The Foresrone～</u></p>
+              <p class="fw-light fw-bold">Processing, Arduino, Tello SDK</p>
+              <p class="fw-light small">
+                2023年の3年生前期に、ドローンと植物をつないだ「The Foresrone」という作品を制作しました。
+              </p>
+              <a href="./Works/SESSION.html" class="btn btn-outline-secondary btn-sm" role="button"
+                aria-disabled="true">
+                more
+              </a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <!-- まだURL入れてない（入れたら消す) -->
+            <a href="./img/HUNGA_RE_COLLECTION/HUNGA_RE_COLLECTION_3.jpg" data-lightbox="group5">
+              <img src="./img/HUNGA_RE_COLLECTION/HUNGA_RE_COLLECTION_3.jpg" class="d-block mx-auto w-50 rounded float3"
+                alt="...">
+            </a>
+            <div class="text-center">
+              <p class="fw-bold "><u>HUNGA_RE_COLLECTION展<br>～ToioMap～</u></p>
+              <p class="fw-light fw-bold">P5.toio, P5.js, Arduino, Projection Mapping</p>
+              <p class="fw-light small">
+                2024年1月31日~2月6日に、人文学部国際コミュニケーション学科（以下、国コミ）と協同で
+                製作し、ハンガリー大使館文化部リスト・ハンガリー文化センターで「ToioMap」
+                という作品を展示しました。<br><br>
+
+
+              </p>
+              <a href="./Works/HUNGA_RE_COLLECTION.html" class="btn btn-outline-secondary btn-sm" role="button"
+                aria-disabled="true">
+                more
+              </a>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
 
 
 
 
-    <br>
+      <br>
 
-    <!-- <ul class="slider">
+      <!-- <ul class="slider">
       <li><img src="https://placekitten.com/200/200" alt=""></li>
       <li><img src="https://placekitten.com/200/200" alt=""></li>
       <li><img src="https://placekitten.com/200/200" alt=""></li>
@@ -241,13 +262,16 @@
     </ul> -->
 
 
-  </div>
-
-  <footer class="footer mt-4 py-3 bg-light">
-    <div class="text-center">
-      <span class="text-muted">© 2024 Riku Kimura</span>
     </div>
-  </footer>
+
+    <footer class="footer mt-4 py-3 bg-light">
+      <div class="text-center">
+        <span class="text-muted">© 2024 Riku Kimura</span>
+      </div>
+    </footer>
+
+    <!--/container-->
+  </div>
 
   <script src="./assets/bootstrap.bundle.min.js"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
@@ -263,6 +287,10 @@
   <script src="./assets/slick.min.js"></script>
   <!-- jsの読み込み -->
   <script src="./js/main.js"></script>
+
+  <script src="./assets/lightbox.min.js" type="text/javascript"></script>
+
+  <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script>
 
 </body>
 

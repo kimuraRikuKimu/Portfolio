@@ -242,7 +242,7 @@ function draw() {
         noStroke();
         //250までに目標の色を段々変えていく
         fill(circleColor[0], circleColor[1], circleColor[2]);
-        let k = abs(c54X - canvasWidth / 2);
+        let k = c54X - width / 2;
         circle(position[0] - k, position[1] - 100, 10);
 
         if (targetBoolean[i] == false) {
