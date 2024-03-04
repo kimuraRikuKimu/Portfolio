@@ -212,19 +212,19 @@ function draw() {
     // console.log(circleColor[0]);
     if (information[0] && infomartionCount == 0) {
         stroke(0);
-        if (width / 2 - 45 < mouseX && mouseX < width / 2 + 45 && height / 2 - 15 < mouseY && mouseY < height / 2 + 15) {
+        if (width / 2 - 45 < mouseX && mouseX < width / 2 + 45 && height / 2 - 55 < mouseY && mouseY < height / 2 - 35) {
             fill(255, 0, 0, 200);
         } else {
             noFill();
         }
-        rect(width / 2 - 45, height / 2 - 15, 90, 20);
+        rect(width / 2 - 45, height / 2 - 55, 90, 20);
         fill(0, 0, 0);
         textAlign(CENTER);
         textSize(15);
-        text("Click me!", canvasWidth / 2, canvasHeight / 2);
+        text("Click me!", canvasWidth / 2, canvasHeight / 2-40);
         textSize(12);
-        text("Stop and then click to randomly", canvasWidth / 2 , canvasHeight / 2 + 20)
-        text("change colors and patterns.", canvasWidth / 2 , canvasHeight / 2 + 40)
+        text("Stop and then click to randomly", canvasWidth / 2 , canvasHeight / 2 -20)
+        text("change colors and patterns.", canvasWidth / 2 , canvasHeight / 2 )
         infomartionCount++;
     }
     for (let i = 0; i < circleColorTerget.length; i++) {
@@ -236,14 +236,14 @@ function draw() {
 
         }
 
-    }
+    }//fdaosfjidaosjfaofjapdfjpafjapsdfja[pfja[sdfja@[sfdj[ajdfa[]]]]]
     for (let i = 0; i < circlePositions.length; i++) {
         position = circlePositions[i];
         noStroke();
         //250までに目標の色を段々変えていく
         fill(circleColor[0], circleColor[1], circleColor[2]);
         let k = c54X - width / 2;
-        circle(position[0] - k, position[1] , 10);
+        circle(position[0] - k, position[1] +80, 10);
 
         if (targetBoolean[i] == false) {
             if (fall[i] && fallCount[i] < 250) {
@@ -257,9 +257,9 @@ function draw() {
                 position[1] += speedsY[i];
                 speedsY[i] += gravitysY[i];
 
-                if (position[1] - 100 > canvasHeight) {
+                if (position[1] + 80 > canvasHeight) {
                     speedsY[i] *= -0.7;
-                    position[1] = canvasHeight + 100;
+                    position[1] = canvasHeight - 80;
                     if (abs(speedsX[i]) < frictionsX[i]) {
                         speedsX[i] = 0;
                     } else if (speedsX[i] < 0) {
@@ -267,9 +267,9 @@ function draw() {
                     } else {
                         speedsX[i] -= frictionsX[i];
                     }
-                } else if (position[1] - 100 < 0) {
+                } else if (position[1] + 80 < 0) {
                     speedsY[i] *= -1;
-                    position[1] = 100;
+                    position[1] = -80;
                 }
                 if (position[0] - k > canvasWidth) {
                     speedsX[i] *= -1;
