@@ -101,6 +101,7 @@ img {
 }
 
 
+
 .Acenter {
   text-align: center;
 }
@@ -279,17 +280,6 @@ img {
 
 
 /*塗りから線に変わる*/
-.btnchangeline {
-  /*線の基点とするためrelativeを指定*/
-  position: relative;
-  /*ボタンの形状*/
-  padding: 10px 30px;
-  display: inline-block;
-  text-decoration: none;
-  outline: none;
-  /*アニメーションの指定*/
-  transition: all 0.3s ease-in-out;
-}
 
 /*線の設定*/
 .btnchangeline::before {
@@ -354,4 +344,25 @@ img {
 .btnchangeline:hover span {
   letter-spacing: 2px;
   color: #333;
+}
+
+
+
+
+
+
+
+/* スマホの時に見せるテキスト表示（タップで拡大） */
+
+.pc { display: block !important; }
+.sp { display: none !important; }
+
+@media only screen and (max-width: 750px) {
+  .pc {
+    display: none !important;
+  }
+
+  .sp {
+    display: block !important;
+  }
 }
