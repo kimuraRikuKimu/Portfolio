@@ -17,6 +17,12 @@
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="../css/loding.css">
 
+    <link rel="stylesheet" type="text/css" href="../css/scroll.css">
+
+    <!-- modal隠れているコンテンツを表示させる機能 -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/modal.css">
 </head>
 
 <body class="">
@@ -299,8 +305,9 @@
                     </div>
                 </div>
                 <div class="description">
-                    <p class="text-center fs-5 fw-bold">作品:&thinsp;<a href="https://youtu.be/9kZWITVXCNI"
-                            target="_blank">Invisible Gage</a>
+                    <p class="text-center fs-5 fw-bold">作品:&thinsp;
+                        <a href="https://www.youtube.com/embed/9kZWITVXCNI?si=vy1cg24wHjxIoeTv"
+                            class="video-open">Invisible Gage</a>
                     </p>
                     <p class="text-center fs-5 fw-bold">GITHUB: &thinsp;<a
                             href="https://github.com/kimuraRikuKimu/InvisibleGage" target="_blank">Invisible
@@ -311,57 +318,68 @@
                             Processing, Kinect, Projection Mapping <br><br>
                         </p>
                     </div>
-                    <p>
-                        2023年7月19日、明星大学構内で2日間にわたり開催されたPILOT展で、Projection Mapping班として「Invisible
-                        Gage」という作品を展示しました。<br><br>
+                    <div class="box fadeUpTrigger">
+                        <p>
+                            2023年7月19日、明星大学構内で2日間にわたり開催されたPILOT展で、Projection Mapping班として「Invisible
+                            Gage」という作品を展示しました。<br><br>
 
-                        この作品は、2023年5月頃から人文学部国際コミュニケーション学科（以下、国コミ）の方々と協同で製作しました。<br>
-                        絵画が普通に額縁に飾られているように見えますが、興味を持った人が近づくと絵の中にゲージが表示され、それが満たされると絵が動き出します。<br>
-                        そして、絵の元になった場所に案内し、また元の絵に戻るという仕組みです。<br>
-                        今回のテーマがハンガリーだったため、ゲージが満たされるとハンガリーの国旗が表示されるようにしました。
-                        また、日本と同じように温泉が有名なため、「セーチェニ温泉」の画像を絵画風に加工して制作しました。<br><br>
-
-                        他学部との協同で作品を制作するのは初めてで、楽しい部分もありましたが、課題もありました。<br>
-                        国コミという情報学を知らない学生に作品を説明し進捗を共有する方法がわからなかったため、まずはお互いの理解を深めるために情報学部からワークショップを行い、
-                        国コミからは英語のレクチャーを受けました。<br>
-                        その後、親睦が深まった段階で作品のアイデアをとにかく出し合い、その中から時間とリソースを考慮して製作可能なものをまとめて作品製作を始めました。<br><br>
-
-                    <div class="Acenter">
-                        <a href="../pdf/Projection_Mapping.pdf" class="btn05 bordercircle2" target="_blank">
-                            作品のアイデア出しの様子はこちら
-                        </a><br><br>
+                            この作品は、2023年5月頃から人文学部国際コミュニケーション学科（以下、国コミ）の方々と協同で製作しました。<br>
+                            絵画が普通に額縁に飾られているように見えますが、興味を持った人が近づくと絵の中にゲージが表示され、それが満たされると絵が動き出します。<br>
+                            そして、絵の元になった場所に案内し、また元の絵に戻るという仕組みです。<br>
+                            今回のテーマがハンガリーだったため、ゲージが満たされるとハンガリーの国旗が表示されるようにしました。
+                            また、日本と同じように温泉が有名なため、「セーチェニ温泉」の画像を絵画風に加工して制作しました。<br><br>
+                        </p>
                     </div>
+                    <div class="box fadeUpTrigger">
+                        <p>
+                            他学部との協同で作品を制作するのは初めてで、楽しい部分もありましたが、課題もありました。<br>
+                            国コミという情報学を知らない学生に作品を説明し進捗を共有する方法がわからなかったため、まずはお互いの理解を深めるために情報学部からワークショップを行い、
+                            国コミからは英語のレクチャーを受けました。<br>
+                            その後、親睦が深まった段階で作品のアイデアをとにかく出し合い、その中から時間とリソースを考慮して製作可能なものをまとめて作品製作を始めました。<br><br>
 
-                    進捗共有では口頭やオンラインでの説明だとお互いの作品の完成イメージがズレる可能性があるため、繰り返し対面で進捗共有と
-                    、フィードバックをもらいつつ作品を制作し、
-                    展示当日は国コミの学生も作品の発表を行ったため、作品の設置や起動方法などを動画で共有しました。<br>
-                    その結果、自分の作品を最大限来場者に魅せることが出来、チーム開発に関して自信を持つことが出来て良かったです。
-                    しかし、進捗共有やディスカッションなど全てのミーティングを対面で無理に合わせようとして行う頻度が少なくなってしまった為、
-                    次回の協同製作では進捗共有等の大事な場面では対面で、それ以外はZoom等のオンラインにし、
-                    対面に来れなかった人のために録画をするようにしようと思いました。
-
-                    <br><br>
-
-                    <div class="Acenter">
-                        <a href="https://youtu.be/HOR_yeTm2nM" class="btn05 bordercircle2" target="_blank">
-                            起動方法等を説明している動画はこちら
-                        </a><br><br>
+                        <div class="Acenter">
+                            <a href="../pdf/Projection_Mapping.pdf" class="btn05 bordercircle2" target="_blank">
+                                作品のアイデア出しの様子はこちら
+                            </a><br><br>
+                        </div>
+                        </p>
                     </div>
+                    <div class="box fadeUpTrigger">
+                        <p>
+                            進捗共有では口頭やオンラインでの説明だとお互いの作品の完成イメージがズレる可能性があるため、繰り返し対面で進捗共有と
+                            、フィードバックをもらいつつ作品を制作し、
+                            展示当日は国コミの学生も作品の発表を行ったため、作品の設置や起動方法などを動画で共有しました。<br>
+                            その結果、自分の作品を最大限来場者に魅せることが出来、チーム開発に関して自信を持つことが出来て良かったです。
+                            しかし、進捗共有やディスカッションなど全てのミーティングを対面で無理に合わせようとして行う頻度が少なくなってしまった為、
+                            次回の協同製作では進捗共有等の大事な場面では対面で、それ以外はZoom等のオンラインにし、
+                            対面に来れなかった人のために録画をするようにしようと思いました。
 
-                    来場者からのコメントで、「見ていて楽しい」や「ハンガリーと日本は凄い離れているのに同じ共通の文化を持っていることに驚いた」
-                    等の作品に対しての面白さと、ハンガリーの文化を知ってもらえたコメントが多数でした。<br>
-                    しかし、中には「地面を青いビニール袋を敷いてユーザも温泉に浸かっているように見せた方が深く知れる」のように作品を
-                    より良く見せる為のコメントもいただいた為、ユーザと作品の距離が親密になれるようにより一層頑張りたいと思いました。
-                    </p>
-                    <p>
-                        『情報学部情報学科と人文学部国際コミュニケーション学科（以下、国コミ学科）の学生が23年度前期の協働プロジェクトとして、学内展示を実施します。
-                        今回の展示テーマであるPilotは「探索的」という、未知の航路を探りながら進む船の舵を取るという意味です。
-                        （ 概要URL:
-                        <a href="https://www.meisei-u.ac.jp/2023/2023071201.html" target="_blank">
-                            PILOT展～情報学科 x 国際コミュニケーション学科協働プロジェクトについて～
-                        </a>
-                        ）』<br>
-                    </p>
+                            <br><br>
+
+                        <div class="Acenter">
+                            <a href="https://youtu.be/HOR_yeTm2nM" class="btn05 bordercircle2" target="_blank">
+                                起動方法等を説明している動画はこちら
+                            </a><br><br>
+                        </div>
+                        </p>
+                    </div>
+                    <div class="box fadeUpTrigger">
+                        <p>
+                            来場者からのコメントで、「見ていて楽しい」や「ハンガリーと日本は凄い離れているのに同じ共通の文化を持っていることに驚いた」
+                            等の作品に対しての面白さと、ハンガリーの文化を知ってもらえたコメントが多数でした。<br>
+                            しかし、中には「地面を青いビニール袋を敷いてユーザも温泉に浸かっているように見せた方が深く知れる」のように作品を
+                            より良く見せる為のコメントもいただいた為、ユーザと作品の距離が親密になれるようにより一層頑張りたいと思いました。
+                        </p>
+                        <p>
+                            『情報学部情報学科と人文学部国際コミュニケーション学科（以下、国コミ学科）の学生が23年度前期の協働プロジェクトとして、学内展示を実施します。
+                            今回の展示テーマであるPilotは「探索的」という、未知の航路を探りながら進む船の舵を取るという意味です。
+                            （ 概要URL:
+                            <a href="https://www.meisei-u.ac.jp/2023/2023071201.html" target="_blank">
+                                PILOT展～情報学科 x 国際コミュニケーション学科協働プロジェクトについて～
+                            </a>
+                            ）』<br>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -389,6 +407,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js"></script><!--不必要なら削除-->
     <!--自作のJS-->
     <script src="../js/loading.js"></script>
+
+    <script src="../js/scroll.js"></script>
+
+    <!-- modal隠れているコンテンツを表示させる機能 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/js/modaal.min.js"></script>
+    <script src="../js/modal.js"></script>
 </body>
 
 </html>
