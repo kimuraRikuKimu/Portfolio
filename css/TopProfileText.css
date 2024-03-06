@@ -1,0 +1,13 @@
+.toptext {
+    font-family: "SimSun";
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    color: #000;
+    font-weight: 500;
+    font-size: 56px;
+    mix-blend-mode: overlay;
+}
